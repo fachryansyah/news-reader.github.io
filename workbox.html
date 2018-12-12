@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="manifest" href="/manifest.json">
+	<title>Workbox Test</title>
+</head>
+<body>
+	<h1>Test workbox</h1>
+	<script type="text/javascript">
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('/service-worker-workbox.js');
+			})
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<script type="text/javascript">
+	// var helloWorld = function(name) {
+	// 	return new Promise((resolve, reject) => {
+	// 		if (name === "" || name === undefined || name === null) {
+				
+	// 			reject("You have to provide the name!");
+
+	// 		} else {
+
+	// 			var message = "Hello world, " + name;
+	// 			resolve(message);
+
+	// 		}
+	// 	});
+	// };
+
+	var helloWorld = function(name) {
+		return new Promise((resolve, reject) => {
+			if (name != "" || name != undefined) {
+				var message = "Hello world, " + name;
+				resolve(message);
+			} else {
+				reject("You have to provide the name!");
+			}
+		});
+	};
+
+	function addCodepolitan(message) {
+		return message + " from Codepolitan!";
+	}
+
+	var promises = Promise.all([
+		helloWorld("Kresna Galuh"),
+		helloWorld(""),
+		helloWorld("Ahmad Oriza")
+		.then(function(result) {
+			return result;
+		})
+		.then(function(result2) {
+			var message = addCodepolitan(result2);
+			return message;
+		})
+	]);
+
+	promises.then(function(results) {
+		console.log(results);
+	});
+
+	// console.log(helloWorld(""))
+</script>
